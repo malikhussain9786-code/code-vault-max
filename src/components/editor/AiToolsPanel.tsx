@@ -54,6 +54,7 @@ export function AiToolsPanel({ language, code, onApplyCode }: AiToolsPanelProps)
     asking,
     answer,
     askUnavailable,
+    error,
   } = useAi();
 
   const [askOpen, setAskOpen] = useState(false);
@@ -145,6 +146,16 @@ export function AiToolsPanel({ language, code, onApplyCode }: AiToolsPanelProps)
         <ToolButton icon={FileText} label="Document" onClick={handleDocument} loading={documenting} disabled={disabled} tint="neutral" />
         <ToolButton icon={MessageCircleQuestion} label="Ask AI" onClick={() => setAskOpen((v) => !v)} tint="neutral" />
       </div>
+
+      {error && (
+        <div className="mt-3 rounded-control border-l-[3px] border-l-accent-danger border border-border-subtle bg-accent-danger/[0.08] p-3.5 flex items-start gap-2.5">
+          <AlertTriangle size={16} className="text-accent-danger shrink-0 mt-0.5" />
+          <div>
+            <p className="text-sm font-semibold text-accent-danger">AI request failed</p>
+            <p className="text-sm text-text-primary mt-0.5">{error}</p>
+          </div>
+        </div>
+      )}
 
       {(explainUnavailable || findErrorsUnavailable || fixUnavailable || improveUnavailable || documentUnavailable) && (
         <p className="mt-3 text-xs text-text-muted italic">

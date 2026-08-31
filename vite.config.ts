@@ -18,4 +18,20 @@ export default defineConfig({
       },
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        // Monaco is by far the heaviest dependency in this app (the bulk of what made
+        // the Editor page's bundle feel slow to load) — splitting it into its own
+        // chunk means the browser can cache it separately from the rest of the app
+        // code. Once a visitor has loaded the Editor once, later visits reuse the
+        // cached Monaco chunk instead of re-downloading it every time the app's own
+        // code changes.
+        manualChunks: {
+          monaco: ['monaco-editor', '@monaco-editor/react'],
+          charts: ['recharts'],
+        },
+      },
+    },
+  },
 });
