@@ -1,0 +1,42 @@
+<svg width="220" height="40" viewBox="0 0 220 40" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="cvp-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7C5CFF" />
+      <stop offset="100%" stop-color="#22D3EE" />
+    </linearGradient>
+  </defs>
+
+  <!-- Mark: vault circle fused with code brackets -->
+  <g transform="translate(2, 2)">
+    <circle cx="18" cy="18" r="17" fill="none" stroke="url(#cvp-gradient)" stroke-width="2.5" />
+    <path
+      d="M13 12 L7 18 L13 24"
+      fill="none"
+      stroke="url(#cvp-gradient)"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <path
+      d="M23 12 L29 18 L23 24"
+      fill="none"
+      stroke="url(#cvp-gradient)"
+      stroke-width="2.5"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+    <!-- Vault bolt notch at center, the "lock" detail that reads as vault rather than just a bracket pair -->
+    <circle cx="18" cy="18" r="2" fill="url(#cvp-gradient)" />
+  </g>
+
+  <!-- Wordmark -->
+  <text
+    x="50"
+    y="26"
+    font-family="'Space Grotesk', sans-serif"
+    font-weight="600"
+    font-size="19"
+    fill="currentColor"
+    letter-spacing="-0.3"
+  >Code Vault<tspan fill="url(#cvp-gradient)"> Pro</tspan></text>
+</svg>

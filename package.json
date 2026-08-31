@@ -1,0 +1,50 @@
+{
+  "name": "code-vault-max",
+  "private": true,
+  "version": "0.3.0",
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n vite,api -c blue,magenta \"vite\" \"npm run server\"",
+    "dev:frontend-only": "vite",
+    "server": "tsx watch server/index.ts",
+    "build": "tsc -b && vite build",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.0",
+    "axios": "^1.7.7",
+    "@monaco-editor/react": "^4.6.0",
+    "zustand": "^4.5.5",
+    "lucide-react": "^0.427.0",
+    "recharts": "^2.12.7",
+    "monaco-editor": "^0.50.0",
+    "zod": "^3.23.8",
+    "dotenv": "^16.4.5",
+    "cors": "^2.8.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "@vitejs/plugin-react": "^4.3.1",
+    "@vercel/node": "^3.2.24",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8.57.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "eslint-plugin-react-refresh": "^0.4.9",
+    "postcss": "^8.4.41",
+    "tailwindcss": "^3.4.9",
+    "typescript": "~5.5.4",
+    "vite": "^5.4.1",
+    "concurrently": "^9.0.1",
+    "tsx": "^4.17.0",
+    "@types/node": "^22.4.1",
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21"
+  }
+}

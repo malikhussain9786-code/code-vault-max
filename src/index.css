@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  /* Dark mode (default) — matches design system spec */
+  --bg-primary: #0A0B0F;
+  --bg-surface: #13141B;
+  --bg-elevated: #1C1E28;
+  --border-subtle: #262838;
+  --text-primary: #F5F6FA;
+  --text-muted: #8B8DA0;
+  --accent-primary: #6B4CE6;
+  --accent-secondary: #22D3EE;
+  --accent-danger: #FF5C7A;
+  --accent-warning: #FFB454;
+  /* Distinct from --accent-primary on purpose: --accent-primary is tuned to work as a
+     BACKGROUND for white button text (needs to stay darker/more saturated); this token
+     is tuned for use AS text color on dark surfaces (links, active nav state, code
+     keywords), which needs to be brighter. The Step 22 audit found one value can't
+     serve both — brightening accent-primary fixed text contrast but broke the
+     solid-fill button/tab case (white text dropped to 3.1:1). */
+  --code-keyword: #9380FF;
+}
+
+.light {
+  --bg-primary: #FAFAFC;
+  --bg-surface: #FFFFFF;
+  --bg-elevated: #F2F3F7;
+  --border-subtle: #E4E5EC;
+  --text-primary: #12131A;
+  --text-muted: #5C5E70;
+  /* These four are darkened from their dark-mode-derived values specifically because
+     they're used as TEXT color (badges, syntax highlighting, status labels) — the
+     Step 22 contrast audit measured real WCAG AA failures (as low as 2.31:1) with the
+     originally-planned lighter shades on a white background. Verified via computed
+     luminance, not just visual judgement: all four now clear 4.5:1. */
+  --accent-primary: #6A45E8;
+  --accent-secondary: #0A7F94;
+  --accent-danger: #D02150;
+  --accent-warning: #96600A;
+  --code-keyword: #6A45E8;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
