@@ -3,10 +3,8 @@
 A developer workspace where you write code and an AI assistant helps you build,
 understand, and fix it — writing new code from a prompt, explaining existing code,
 spotting likely bugs, and proposing fixes you can apply directly. Deploys entirely on
-Vercel with zero backend infrastructure — no database, no server to manage, matching
-the same proven, simple architecture used by other AI-powered tools deployed the same way.
-
-**Live demo:** _add your deployed URL here_
+Vercel with zero backend infrastructure — no database, no server to manage.
+Live demo:https://code-vault-max.vercel.app/
 
 ---
 
